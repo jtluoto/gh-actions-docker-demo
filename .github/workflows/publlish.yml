@@ -1,0 +1,33 @@
+name: Publish to ghcr.io
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  run_tests:
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Example of how to run a shell command
+        run: echo "Run build & unit tests"
+
+      
+  docker_build_and_publish:
+    name: Docker build & publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    needs: run_tests
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Example of how to run a shell command
+        run: echo "Run docker build & push"
