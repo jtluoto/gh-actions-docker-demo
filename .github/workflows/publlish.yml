@@ -8,7 +8,7 @@ on:
 jobs:
   run_tests:
     name: Run tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout code
@@ -20,7 +20,7 @@ jobs:
       
   docker_build_and_publish:
     name: Docker build & publish
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       contents: read
     needs: run_tests
