@@ -1,4 +1,3 @@
-# FILE: README.md
 # My Node.js Project
 
 This project is a simple Node.js application that sets up an Express server. It listens on port 3000 and responds with "Hello world" when the root route is accessed.
@@ -20,7 +19,7 @@ To get a copy of the project up and running on your local machine, follow these 
    ```
 2. Navigate to the project directory:
    ```
-   cd my-nodejs-project
+   cd gh-actions-docker-demo
    ```
 3. Install the dependencies:
    ```
@@ -41,17 +40,9 @@ To build and run the application using Docker, follow these steps:
 
 1. Build the Docker image:
    ```
-   docker build -t my-nodejs-app .
+   docker build -t gh-actions-docker-demo .
    ```
 2. Run the Docker container:
    ```
-   docker run -p 3000:3000 my-nodejs-app
+   docker run -p 3000:3000 gh-actions-docker-demo
    ```
-
-### Contributing
-
-Feel free to submit issues or pull requests for any improvements or features.
-
-### License
-
-This project is licensed under the MIT License.
