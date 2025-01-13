@@ -40,15 +40,11 @@ jobs:
     permissions:
       packages: write
       contents: read
-
-#    needs: build_and_test
+    needs: build_and_test
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-#      - name: Set up Docker Buildx
-#        uses: docker/setup-buildx-action@v3
 
       - name: Log in to ghcr.io
         uses: docker/login-action@v3
@@ -56,15 +52,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-#          registry: ${ vars.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com
-#          username: ${ secrets.AWS_ACCESS_KEY_ID }}
-#          password: ${ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: jtluoto/gh-actions-docker-demo  
+          images: gh-actions-docker-demo  
 
       - name: Build and push Docker image
         id: push
