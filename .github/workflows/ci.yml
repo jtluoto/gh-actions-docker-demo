@@ -37,7 +37,11 @@ jobs:
   docker:
     name: Docker build & push
     runs-on: ubuntu-latest
-    needs: build_and_test
+    permissions:
+      packages: write
+      contents: read
+
+#    needs: build_and_test
 
     steps:
       - name: Checkout code
@@ -60,7 +64,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: jtluoto/gh-actions-docker-demo
+          images: jtluoto/gh-actions-docker-demo  
 
       - name: Build and push Docker image
         id: push
