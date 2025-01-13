@@ -4,10 +4,7 @@ on:
   push:
     branches:
       - '**'
-  #workflow_dispatch:
-  #schedule:
-  #  - cron: '0 0 * * *'
-  
+
 jobs:
   build_and_test:
     name: Build & unit test
