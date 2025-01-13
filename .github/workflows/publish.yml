@@ -6,7 +6,7 @@ on:
       - '**'
 
 jobs:
-  build_and_test:
+  run_tests:
     name: Build & unit test
     runs-on: ubuntu-latest
 
@@ -31,13 +31,13 @@ jobs:
           name: test_coverage_report
           path: coverage
     
-  docker:
+  docker_build_and_publish:
     name: Docker build & push
     runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
-    needs: build_and_test
+    needs: run_tests
 
     steps:
       - name: Checkout code
@@ -60,8 +60,6 @@ jobs:
         id: push
         uses: docker/build-push-action@v6
         with:
-          context: .
-          file: ./Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
