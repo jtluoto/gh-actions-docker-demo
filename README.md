@@ -1,4 +1,4 @@
-# My Node.js Project
+# GitHub Actions for publishing Docker images
 
 This project is a simple Node.js application that sets up an Express server. It listens on port 3000 and responds with "Hello world" when the root route is accessed.
 
