@@ -1,4 +1,4 @@
-# GitHub Actions for publishing Docker images
+# Exercise: GitHub Actions for publishing Docker images
 
 In the .github/workfkows directory, there is a file called publish.yml. This file contains the stub of a GitHub Actions workflow that tests a minimal node.js app, builds a Docker image and publishes it to ghcr.io (GitHub Container Registry). Implement the missing parts of the workflow.
 
